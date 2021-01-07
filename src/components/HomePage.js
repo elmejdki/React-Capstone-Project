@@ -1,8 +1,11 @@
 import React from 'react';
+import MealsListFilter from './MealsListFilter';
+import MealsList from './MealsList';
 
 const HomePage = () => (
   <div>
-    <h1>Home Page: here goes the list of the meals</h1>
+    <MealsListFilter />
+    <MealsList />
   </div>
 );
 

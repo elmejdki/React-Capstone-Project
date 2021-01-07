@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import HomePage from '../components/HomePage';
 import MealPage from '../components/MealPage';
+import NotFoundPage from '../components/NotFoundPage';
 
 const AppRouter = () => (
   <Router>
@@ -13,6 +14,7 @@ const AppRouter = () => (
     <Switch>
       <Route path="/" exact component={HomePage} />
       <Route path="/meal/:id" exact component={MealPage} />
+      <Route component={NotFoundPage} />
     </Switch>
   </Router>
 );

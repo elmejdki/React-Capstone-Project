@@ -1,3 +1,5 @@
+import { getUniqueMeals } from '../helpers';
+
 export const setMeals = meals => ({
   type: 'SET_MEALS',
   meals,
@@ -39,7 +41,9 @@ export const startSetMeals = () => async disptach => {
     finalMeals = finalMeals.concat(meals);
   });
 
-  disptach(setMeals(finalMeals));
+  const result = getUniqueMeals(finalMeals);
 
-  return 'All is good there is no error on the API';
+  disptach(setMeals(result));
+
+  return result;
 };
