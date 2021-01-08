@@ -2,11 +2,14 @@ export const getUniqueMeals = meals => {
   const result = [];
   const uniqueMeals = {};
 
-  meals.forEach(meal => {
-    if (!uniqueMeals[meal.idMeal]) {
-      uniqueMeals[meal.idMeal] = {
-        title: meal.strMeal,
-        image: meal.strMealThumb,
+  meals.forEach(({
+    idMeal, strMeal, strMealThumb, category,
+  }) => {
+    if (!uniqueMeals[idMeal]) {
+      uniqueMeals[idMeal] = {
+        title: strMeal,
+        image: strMealThumb,
+        category,
       };
     }
   });
