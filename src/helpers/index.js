@@ -26,4 +26,9 @@ export const getUniqueMeals = meals => {
   return result;
 };
 
-export const removeLater = () => true;
+export const filterMeals = (meals, filters) => {
+  const { text, category } = filters;
+
+  return meals.filter(meal => meal.title.toLowerCase().includes(text.toLowerCase())
+    && meal.category.includes(category));
+};

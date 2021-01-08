@@ -2,54 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { startSetMeals } from '../actions/meals';
 import Loader from './Loader';
+import { startSetMeals } from '../actions/meals';
+import { filterMeals } from '../helpers';
 
 const MealsList = ({ meals, startSetMeals }) => {
   const [isLoading, setIsLoading] = useState(meals.length === 0);
-  const [localMeals, setLocalMeals] = useState([]);
-  const [lastMealIndex, setLastMealIndex] = useState(0);
-  const [noMoreMeals, setNoMoreMeals] = useState(false);
-
-  const addTenMeals = meals => {
-    let index = 0;
-    const newMeals = [];
-    const newLastIndex = lastMealIndex + 1;
-
-    while (index < 10 && meals[newLastIndex + index]) {
-      newMeals.push(meals[newLastIndex + index]);
-      index += 1;
-    }
-
-    setLocalMeals(prevMeals => [
-      ...prevMeals,
-      ...newMeals,
-    ]);
-
-    setLastMealIndex(prevState => prevState + index);
-
-    if (!meals[newLastIndex + index + 1]) {
-      setNoMoreMeals(true);
-    }
-  };
 
   useEffect(() => {
-    if (meals.length === 0) {
-      setIsLoading(true);
-      startSetMeals().then(meals => {
-        setIsLoading(false);
-        addTenMeals(meals);
-      }).catch(err => {
-        console.log(err); // TODO: handle errors with an error component
-      });
-    } else {
-      addTenMeals(meals);
-    }
+    setIsLoading(true);
+    startSetMeals().then(() => {
+      setIsLoading(false);
+    }).catch(err => {
+      console.log(err); // TODO: handle errors with an error component
+    });
   }, []);
-
-  const handleDisplayMore = () => {
-    addTenMeals(meals);
-  };
 
   return (
     <div>
@@ -57,27 +24,19 @@ const MealsList = ({ meals, startSetMeals }) => {
         isLoading
           ? <Loader />
           : (
-            <ul>
-              {
-                localMeals.map(meal => (
-                  <li key={meal.id}>
-                    <Link to={`/meal/${meal.id}`}>
-                      {meal.title}
-                    </Link>
-                  </li>
-                ))
-              }
-              {
-                !noMoreMeals && (
-                  <button
-                    type="button"
-                    onClick={handleDisplayMore}
-                  >
-                    Load More
-                  </button>
-                )
-              }
-            </ul>
+            <div>
+              <ul>
+                {
+                  meals.map(meal => (
+                    <li key={meal.id}>
+                      <Link to={`/meal/${meal.id}`}>
+                        {meal.title}
+                      </Link>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
           )
       }
     </div>
@@ -89,8 +48,8 @@ MealsList.propTypes = {
   startSetMeals: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ meals }) => ({
-  meals,
+const mapStateToProps = ({ meals, filters }) => ({
+  meals: filterMeals(meals, filters),
 });
 
 const mapDispatchToProps = { startSetMeals };
