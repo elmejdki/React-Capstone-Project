@@ -44,6 +44,4 @@ export const startSetMeals = () => async dispatch => {
   const result = getUniqueMeals(finalMeals);
 
   dispatch(setMeals(result));
-
-  return result;
 };

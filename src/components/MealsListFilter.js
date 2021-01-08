@@ -26,7 +26,7 @@ const MealsListFilter = ({
         onChange={handleCategoryChange}
         value={category}
       >
-        <option value="">None</option>
+        <option value="">All</option>
         {
           categories.map(category => (
             <option key={category}>

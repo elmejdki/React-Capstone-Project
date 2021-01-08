@@ -11,11 +11,13 @@ const MealsList = ({ meals, startSetMeals }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    startSetMeals().then(() => {
-      setIsLoading(false);
-    }).catch(err => {
-      console.log(err); // TODO: handle errors with an error component
-    });
+    startSetMeals()
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch(() => {
+        // console.log(err); // TODO: handle errors with an error component
+      });
   }, []);
 
   return (
