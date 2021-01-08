@@ -1,11 +1,12 @@
 import { getUniqueMeals } from '../helpers';
+import setCategories from './categories';
 
 export const setMeals = meals => ({
   type: 'SET_MEALS',
   meals,
 });
 
-export const startSetMeals = () => async disptach => {
+export const startSetMeals = () => async dispatch => {
   let finalMeals = [];
 
   const categoriesResponse = await fetch(
@@ -13,25 +14,24 @@ export const startSetMeals = () => async disptach => {
   );
   const { categories } = await categoriesResponse.json();
 
-  let mealsResponse;
-
-  await categories.forEach(async category => {
-    mealsResponse = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`,
-    );
-
-    const { meals } = await mealsResponse.json();
-
-    finalMeals = finalMeals.concat(meals);
-  });
+  dispatch(setCategories(categories.map(category => category.strCategory)));
 
   const mealsSlots = await Promise.all(categories.map(category => new Promise((resolve, reject) => {
-    mealsResponse = fetch(
+    fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`,
     ).then(
       response => response.json(),
-    ).then(meals => {
-      resolve(meals);
+    ).then(data => {
+      const categoriesedMeals = [];
+
+      data.meals.forEach(meal => {
+        categoriesedMeals.push({
+          ...meal,
+          category: category.strCategory,
+        });
+      });
+
+      resolve(categoriesedMeals);
     }).catch(err => {
       reject(err);
     });
@@ -43,7 +43,7 @@ export const startSetMeals = () => async disptach => {
 
   const result = getUniqueMeals(finalMeals);
 
-  disptach(setMeals(result));
+  dispatch(setMeals(result));
 
   return result;
 };
