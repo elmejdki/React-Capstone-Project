@@ -3,7 +3,7 @@ import MealsListFilter from './MealsListFilter';
 import MealsList from './MealsList';
 
 const HomePage = () => (
-  <div>
+  <div className="page-container">
     <MealsListFilter />
     <MealsList />
   </div>

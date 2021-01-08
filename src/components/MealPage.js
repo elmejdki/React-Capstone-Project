@@ -2,8 +2,13 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { startSetMealDetails, emptyMealDetails } from '../actions/mealDetails';
+import './MealPage.css';
 
-const MealPage = ({ match, startSetMealDetails, mealDetails }) => {
+const MealPage = ({
+  match, startSetMealDetails, mealDetails: {
+    title, area, youtubeVideo, instructions, image, ingredients,
+  },
+}) => {
   useEffect(() => {
     startSetMealDetails(match.params.id);
 
@@ -13,39 +18,73 @@ const MealPage = ({ match, startSetMealDetails, mealDetails }) => {
   }, []);
 
   return (
-    <div className="content-container">
-      <h1>
-        {mealDetails.title}
-      </h1>
-      <p>
-        {`${mealDetails.area} Food.`}
-      </p>
+    <div className="content-container page-container">
+      <div
+        className="heading"
+      >
+        <h1
+          className="title"
+        >
+          {title}
+        </h1>
+        <p
+          className="area"
+        >
+          {`${area} Food.`}
+        </p>
+      </div>
       {
-        mealDetails.youtubeVideo
+        youtubeVideo
         && (
-          <iframe
-            title={mealDetails.title}
-            width="560"
-            height="315"
-            src={mealDetails.youtubeVideo}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <div className="video-container">
+            <iframe
+              className="video"
+              title={title}
+              src={youtubeVideo}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+            <div className="headline">
+              {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
+              👇 👇 👇 Instructions below 👇 👇 👇
+            </div>
+          </div>
         )
       }
-      <img
-        src={mealDetails.image}
-        alt={`${mealDetails.title} thumbnail`}
-      />
-      <ul>
-        {
-          mealDetails.ingredients.map(item => (<li key={item}>{item}</li>))
-        }
-      </ul>
-      <p>
-        {mealDetails.instructions}
-      </p>
+      <div
+        className="preparation"
+      >
+        <img
+          className="image"
+          src={image}
+          alt={`${title} thumbnail`}
+        />
+        <div
+          className="ingredients"
+        >
+          <h4>Ingredients</h4>
+          <ul>
+            {
+              ingredients.map(item => (
+                <li
+                  key={item}
+                  className="ingredients__item"
+                >
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <div
+        className="instructions"
+      >
+        <h1>Instructions</h1>
+        <p>
+          {instructions}
+        </p>
+      </div>
     </div>
   );
 };

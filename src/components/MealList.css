@@ -35,6 +35,10 @@
   width: 100%;
 }
 
+.meal__info__title {
+  font-size: 14px;
+}
+
 .meal__info__category {
   align-self: flex-end;
   opacity: 0.7;
