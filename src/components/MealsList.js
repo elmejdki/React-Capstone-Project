@@ -1,43 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Loader from './Loader';
 import { startSetMeals } from '../actions/meals';
 import { filterMeals } from '../helpers';
+import MealListItem from './MealListItem';
+import './MealList.css';
 
 const MealsList = ({ meals, startSetMeals }) => {
   const [isLoading, setIsLoading] = useState(meals.length === 0);
 
   useEffect(() => {
-    setIsLoading(true);
-    startSetMeals()
-      .then(() => {
-        setIsLoading(false);
-      })
-      .catch(() => {
-        // console.log(err); // TODO: handle errors with an error component
-      });
+    if (meals.length === 0) {
+      setIsLoading(true);
+      startSetMeals()
+        .then(() => {
+          setIsLoading(false);
+        })
+        .catch(() => {
+          // console.log(err); // TODO: handle errors with an error component
+        });
+    }
   }, []);
 
   return (
-    <div>
+    <div className="content-container">
       {
         isLoading
           ? <Loader />
           : (
-            <div>
-              <ul>
-                {
-                  meals.map(meal => (
-                    <li key={meal.id}>
-                      <Link to={`/meal/${meal.id}`}>
-                        {meal.title}
-                      </Link>
-                    </li>
-                  ))
-                }
-              </ul>
+            <div className="meals">
+              {
+                meals.map(meal => (
+                  <MealListItem
+                    key={meal.id}
+                    meal={meal}
+                  />
+                ))
+              }
+              {
+                (meals.length + 1) % 3 === 0
+                && (<div className="meal hidden" />)
+              }
             </div>
           )
       }

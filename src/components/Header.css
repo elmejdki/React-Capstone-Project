@@ -1,0 +1,25 @@
+/* color: #ff772e; HEADER COLOR */
+.header {
+  background-color: #ff772e;
+  height: 60px;
+  margin-bottom: 30px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 161px;
+  transition: color ease-in 0.1s;
+}
+
+.header__title:hover {
+  color: #ffc4a4;
+}

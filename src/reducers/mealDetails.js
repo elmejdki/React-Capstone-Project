@@ -1,4 +1,4 @@
-const mealDetailsReducer = (state = {
+const defaultState = {
   title: '',
   instructions: '',
   image: '',
@@ -6,10 +6,14 @@ const mealDetailsReducer = (state = {
   category: '',
   youtubeVideo: '',
   ingredients: [],
-}, action) => {
+};
+
+const mealDetailsReducer = (state = defaultState, action) => {
   switch (action.type) {
     case 'SET_MEAL_DETAILS':
       return action.mealDetails;
+    case 'EMPTY_MEAL_DETAILS':
+      return defaultState;
     default:
       return state;
   }

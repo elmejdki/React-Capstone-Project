@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setTextFilter, setCategoryFilter } from '../actions/filters';
+import './MealsListFilter.css';
 
 const MealsListFilter = ({
   categories, text, category, setTextFilter, setCategoryFilter,
@@ -14,27 +15,43 @@ const MealsListFilter = ({
     setCategoryFilter(event.target.value);
   };
 
+  const handleClearClick = () => {
+    setTextFilter('');
+    setCategoryFilter('');
+  };
+
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Title"
-        value={text}
-        onChange={handleTextChange}
-      />
-      <select
-        onChange={handleCategoryChange}
-        value={category}
-      >
-        <option value="">All</option>
-        {
-          categories.map(category => (
-            <option key={category}>
-              {category}
-            </option>
-          ))
-        }
-      </select>
+    <div className="content-container">
+      <div className="filter">
+        <input
+          type="text"
+          placeholder="Search by Title"
+          className="filter__input"
+          value={text}
+          onChange={handleTextChange}
+        />
+        <select
+          onChange={handleCategoryChange}
+          value={category}
+          className="filter__selector"
+        >
+          <option value="">All</option>
+          {
+            categories.map(category => (
+              <option key={category}>
+                {category}
+              </option>
+            ))
+          }
+        </select>
+        <button
+          className="filter__button"
+          type="button"
+          onClick={handleClearClick}
+        >
+          Clear Filters
+        </button>
+      </div>
     </div>
   );
 };

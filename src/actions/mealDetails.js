@@ -3,6 +3,10 @@ export const setMealDetails = mealDetails => ({
   mealDetails,
 });
 
+export const emptyMealDetails = () => ({
+  type: 'EMPTY_MEAL_DETAILS',
+});
+
 export const startSetMealDetails = mealID => async dispatch => {
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`,

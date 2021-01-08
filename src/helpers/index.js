@@ -8,7 +8,7 @@ export const getUniqueMeals = meals => {
     if (!uniqueMeals[idMeal]) {
       uniqueMeals[idMeal] = {
         title: strMeal,
-        image: strMealThumb,
+        image: `${strMealThumb}/preview`,
         category,
       };
     }
@@ -31,4 +31,9 @@ export const filterMeals = (meals, filters) => {
 
   return meals.filter(meal => meal.title.toLowerCase().includes(text.toLowerCase())
     && meal.category.includes(category));
+};
+
+export const truncate = (str, n) => {
+  const string = (str.length > n) ? `${str.substr(0, n - 1)}...` : str;
+  return string;
 };
