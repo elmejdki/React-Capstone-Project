@@ -30,7 +30,7 @@ const MealPage = ({
         <p
           className="area"
         >
-          {`${area} Food.`}
+          {`${area} Food`}
         </p>
       </div>
       {
