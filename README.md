@@ -2,7 +2,13 @@
 
 > Meals Book is a React Project where I have a list of meals that has recipes on them, you can click at one recipe to get to the details page to see how you can prepare that meal.
 
+## Project Screenshot:
+
 ![project screenshot](https://user-images.githubusercontent.com/34653764/104085508-54e3ab00-5250-11eb-87c7-87b179832a15.png)
+
+## Video Presentation:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/84bdd3f535744c799615ce79116472fb" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Built With
 
