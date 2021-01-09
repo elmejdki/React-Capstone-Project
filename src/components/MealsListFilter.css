@@ -1,7 +1,6 @@
 .filter {
   margin-bottom: 30px;
   display: flex;
-  height: 30px;
 }
 
 .filter__input {
@@ -26,4 +25,19 @@
 .filter__button {
   width: 120px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .filter {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .filter > * {
+    margin-bottom: 10px;
+  }
+
+  .filter__input {
+    width: 100%;
+  }
 }

@@ -16,7 +16,6 @@ const MealsList = ({ meals, startSetMeals }) => {
       startSetMeals()
         .then(() => {
           setIsLoading(false);
-          console.log(isLoading);
         })
         .catch(() => {
           // console.log(err); // TODO: handle errors with an error component
