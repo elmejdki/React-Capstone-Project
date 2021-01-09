@@ -7,7 +7,7 @@ import { filterMeals } from '../helpers';
 import MealListItem from './MealListItem';
 import './MealList.css';
 
-const MealsList = ({ meals, startSetMeals }) => {
+export const MealsList = ({ meals, startSetMeals }) => {
   const [isLoading, setIsLoading] = useState(meals.length === 0);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { startSetMealDetails, emptyMealDetails } from '../actions/mealDetails';
 import './MealPage.css';
 
-const MealPage = ({
+export const MealPage = ({
   match, startSetMealDetails, mealDetails: {
     title, area, youtubeVideo, instructions, image, ingredients,
   },

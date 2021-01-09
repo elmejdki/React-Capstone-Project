@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { setTextFilter, setCategoryFilter } from '../actions/filters';
 import './MealsListFilter.css';
 
-const MealsListFilter = ({
+export const MealsListFilter = ({
   categories, text, category, setTextFilter, setCategoryFilter,
 }) => {
   const handleTextChange = event => {
