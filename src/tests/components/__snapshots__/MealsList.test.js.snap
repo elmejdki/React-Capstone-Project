@@ -20,7 +20,7 @@ exports[`should render MealsList with full meals correctly 1`] = `
         Object {
           "category": "SeaFood",
           "id": "12345",
-          "image": "this is an image link",
+          "image": "https://google.com/images/image.png/preview",
           "title": "Meal Title 1",
         }
       }
@@ -30,7 +30,7 @@ exports[`should render MealsList with full meals correctly 1`] = `
         Object {
           "category": "Chicken",
           "id": "12445",
-          "image": "this is an image link",
+          "image": "https://google.com/images/image.png/preview",
           "title": "Meal Title 2",
         }
       }
@@ -38,9 +38,9 @@ exports[`should render MealsList with full meals correctly 1`] = `
     <MealListItem
       meal={
         Object {
-          "category": "Dessert",
+          "category": "Chicken",
           "id": "12545",
-          "image": "this is an image link",
+          "image": "https://google.com/images/image.png/preview",
           "title": "Meal Title 3",
         }
       }

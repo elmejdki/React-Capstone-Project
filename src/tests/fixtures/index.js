@@ -3,19 +3,19 @@ export const meals = [
     id: '12345',
     title: 'Meal Title 1',
     category: 'SeaFood',
-    image: 'this is an image link',
+    image: 'https://google.com/images/image.png/preview',
   },
   {
     id: '12445',
     title: 'Meal Title 2',
     category: 'Chicken',
-    image: 'this is an image link',
+    image: 'https://google.com/images/image.png/preview',
   },
   {
     id: '12545',
     title: 'Meal Title 3',
-    category: 'Dessert',
-    image: 'this is an image link',
+    category: 'Chicken',
+    image: 'https://google.com/images/image.png/preview',
   },
 ];
 
@@ -40,3 +40,42 @@ export const mealDetails = {
     'ingredient 4',
   ],
 };
+
+export const messyMeals = [
+  {
+    idMeal: '12345',
+    strMeal: 'Meal Title 1',
+    category: 'SeaFood',
+    strMealThumb: 'https://google.com/images/image.png',
+  },
+  {
+    idMeal: '12345',
+    strMeal: 'Meal Title 1',
+    category: 'SeaFood',
+    strMealThumb: 'https://google.com/images/image.png',
+  },
+  {
+    idMeal: '12345',
+    strMeal: 'Meal Title 1',
+    category: 'SeaFood',
+    strMealThumb: 'https://google.com/images/image.png',
+  },
+  {
+    idMeal: '12345',
+    strMeal: 'Meal Title 1',
+    category: 'SeaFood',
+    strMealThumb: 'https://google.com/images/image.png',
+  },
+  {
+    idMeal: '12445',
+    strMeal: 'Meal Title 2',
+    category: 'Chicken',
+    strMealThumb: 'https://google.com/images/image.png',
+  },
+  {
+    idMeal: '12545',
+    strMeal: 'Meal Title 3',
+    category: 'Chicken',
+    strMealThumb: 'https://google.com/images/image.png',
+  },
+];
