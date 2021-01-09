@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://expensify-2020.herokuapp.com/)
+[Live Demo Link](https://meals-book.herokuapp.com/)
 
 
 ## Getting Started
