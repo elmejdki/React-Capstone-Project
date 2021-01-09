@@ -1,11 +1,11 @@
 import React from 'react';
-import MealsListFilter from './MealsListFilter';
-import MealsList from './MealsList';
+import ConnectedMealsListFilter from './MealsListFilter';
+import ConnectedMealsList from './MealsList';
 
 const HomePage = () => (
   <div className="page-container">
-    <MealsListFilter />
-    <MealsList />
+    <ConnectedMealsListFilter />
+    <ConnectedMealsList />
   </div>
 );
 
