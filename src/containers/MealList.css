@@ -1,7 +1,35 @@
+.meals-container {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .meals {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.add-button {
+  padding: 10px 30px;
+  background-color: #ff772e;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  transition: transform, 0.2s ease-in-out;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+}
+
+.warning {
+  opacity: 0.6;
+  margin-top: 40px;
 }
 
 .meal {
