@@ -1,7 +1,7 @@
 import ShallowRenderer from 'react-test-renderer/shallow';
 import React from 'react';
 import { meals } from '../fixtures';
-import { MealsList } from '../../components/MealsList';
+import { MealsList } from '../../containers/MealsList';
 
 let renderer;
 
