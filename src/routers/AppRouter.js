@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
 import HomePage from '../components/HomePage';
-import ConnectedMealPage from '../components/MealPage';
+import ConnectedMealPage from '../containers/MealPage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
 

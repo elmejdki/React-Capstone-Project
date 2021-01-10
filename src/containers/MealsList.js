@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Loader from './Loader';
+import Loader from '../components/Loader';
 import { startSetMeals } from '../actions/meals';
 import { filterMeals } from '../helpers';
-import MealListItem from './MealListItem';
+import MealListItem from '../components/MealListItem';
 import './MealList.css';
 
 export const MealsList = ({ meals, startSetMeals }) => {
@@ -16,9 +16,6 @@ export const MealsList = ({ meals, startSetMeals }) => {
       startSetMeals()
         .then(() => {
           setIsLoading(false);
-        })
-        .catch(() => {
-          // console.log(err); // TODO: handle errors with an error component
         });
     }
   }, []);

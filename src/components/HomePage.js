@@ -1,6 +1,6 @@
 import React from 'react';
-import ConnectedMealsListFilter from './MealsListFilter';
-import ConnectedMealsList from './MealsList';
+import ConnectedMealsListFilter from '../containers/MealsListFilter';
+import ConnectedMealsList from '../containers/MealsList';
 
 const HomePage = () => (
   <div className="page-container">
