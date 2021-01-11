@@ -1,6 +1,54 @@
-# Getting Started with Create React App
+# Meals Book
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Meals Book is a React Project where I have a list of meals that has recipes on them, you can click at one recipe to get to the details page to see how you can prepare that meal.
+
+## Project Screenshot:
+
+![project screenshot](https://user-images.githubusercontent.com/34653764/104085508-54e3ab00-5250-11eb-87c7-87b179832a15.png)
+
+## Video Presentation:
+
+[![screenshot](https://user-images.githubusercontent.com/34653764/104109842-25758280-52d2-11eb-948b-40e4137df39f.png)](https://www.loom.com/share/84bdd3f535744c799615ce79116472fb)
+
+## Built With
+
+- ReactJS 17,
+- ReactDOM 17,
+- Redux,
+- create-react-app,
+- Express,
+- NodeJs,
+- Babel
+
+## Live Demo
+
+[Live Demo Link](https://meals-book.herokuapp.com/)
+
+
+## Getting Started
+
+### Prerequisites
+
+In order to have this project up and running you will need:
+
+- NodeJS 10+
+
+### Setup
+
+First, you need to clone this project using one of the links above, using this command:
+
+```Javascript
+git clone RESPOSITRY_LINK
+
+```
+
+Then you should run: `npm install`
+
+And afterward, you supposed to run: `npm start`, to run the project in your local machine.
+
+Then head to the localhost on port 3000 `https://localhost:3000`
+
+Congrats the project is fully working.
 
 ## Available Scripts
 
@@ -39,32 +87,24 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Authors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Zakariae El Mejdki**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github: [@elmejdki](https://github.com/elmejdki)
+- Twitter: [@zakariae_elmejdki](https://twitter.com/zakariaemejdki)
+- Linkedin: [Zakariae El Mejdki](https://www.linkedin.com/in/zakariaeelmejdki/)
 
-### Code Splitting
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions, issues and feature requests are welcome!
 
-### Analyzing the Bundle Size
+Feel free to check the [issues page](https://github.com/elmejdki/React-Capstone-Project/issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📝 License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](lic.url) licensed.
